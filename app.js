@@ -1,12 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Thing = require('./models/Things')
-
+const Credentials = require('./credential')
 
 const app = express();
 app.use(express.json());
-
-let dbAdress = 'mongodb+srv://acurlier:46Q5CXE8uwxZTnEG@cluster0.6kvutdd.mongodb.net/?retryWrites=true&w=majority';
+let dbAdress = Credentials.MongoURL;
 
 mongoose.connect(dbAdress,
   { useNewUrlParser: true,
